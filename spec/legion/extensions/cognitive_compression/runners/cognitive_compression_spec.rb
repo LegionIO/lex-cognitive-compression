@@ -38,7 +38,7 @@ RSpec.describe Legion::Extensions::CognitiveCompression::Runners::CognitiveCompr
     it 'creates an abstraction' do
       c1 = client.store_chunk(label: 'a')
       c2 = client.store_chunk(label: 'b')
-      result = client.abstract_chunks(chunk_ids: [c1[:chunk][:id], c2[:chunk][:id]],
+      result = client.abstract_chunks(chunk_ids:         [c1[:chunk][:id], c2[:chunk][:id]],
                                       abstraction_label: 'ab')
       expect(result[:success]).to be true
       expect(result[:abstraction][:chunk_type]).to eq(:abstract)

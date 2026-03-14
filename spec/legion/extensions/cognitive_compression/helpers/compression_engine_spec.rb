@@ -47,7 +47,7 @@ RSpec.describe Legion::Extensions::CognitiveCompression::Helpers::CompressionEng
     it 'creates an abstraction from multiple chunks' do
       c1 = engine.store_chunk(label: 'a')
       c2 = engine.store_chunk(label: 'b')
-      abstraction = engine.abstract_chunks(chunk_ids: [c1.id, c2.id],
+      abstraction = engine.abstract_chunks(chunk_ids:         [c1.id, c2.id],
                                            abstraction_label: 'combined')
       expect(abstraction).to be_a(Legion::Extensions::CognitiveCompression::Helpers::InformationChunk)
       expect(abstraction.chunk_type).to eq(:abstract)
